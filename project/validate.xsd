@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!--Define element for a store-->
+    <xs:element name="store">
+        <xs:complexType>
+            <xs:sequence>
+                <!--Define the info element for the store details-->
+                <xs:element name="information" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name" type="xs:string"/>
+                            <xs:element name="description" type="xs:string"/>
+                            <xs:element name="owner">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute name="userId" type="xs:string" use="required"/>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:string" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+                <!--Define product element-->
+                <xs:element name="products">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="product" minOccurs="1" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="title" type="xs:string"/>
+                                        <xs:element name="author" type="xs:string"/>
+                                        <xs:element name="isbn" type="xs:string"/>
+                                        <xs:element name="sku" type="xs:string"/>
+                                        <xs:element name="description" type="xs:string"/>
+                                        <xs:element name="price">
+                                            <xs:complexType>
+                                                <xs:simpleContent>
+                                                    <xs:extension base="xs:decimal">
+                                                        <xs:attribute name="currency" type="xs:string" use="required"/>
+                                                    </xs:extension>
+                                                </xs:simpleContent>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="department" type="xs:string"/>
+                                        <!--Define modules element-->
+                                        <xs:element name="modules">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="module" minOccurs="1" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="id" type="xs:string" use="required"/>
+                                                            <xs:attribute name="name" type="xs:string" use="required"/>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="availability" type="xs:string"/>
+                                        <xs:element name="condition" type="xs:string"/>
+                                        <xs:element name="image" type="xs:string"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" type="xs:string" use="required"/>
+                                    <xs:attribute name="language" type="xs:string" use="required"/>
+                                    <xs:attribute name="edition" type="xs:string" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
