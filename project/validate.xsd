@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!--Hayley Dodkins u21528790-->
     <!--Define element for a store-->
     <xs:element name="store">
         <xs:complexType>
