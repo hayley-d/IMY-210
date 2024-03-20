@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<food 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:noNamespaceSchemaLocation="menu.xsd" 
+  xmlns:b="b_menu.com" 
+  xmlns:l="l_menu.com"> 
+  <b:name>Scrambled Eggs</b:name>
+  <l:price unit="euro">90</l:price>
+  <description>Fluffy eggs cooked to perfection.</description>
+  <!-- the <description> element must be less than 50 characters-->
+</food> 

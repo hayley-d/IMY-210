@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<l:menu 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="l_menu.com l.xsd"
+  xmlns:l="l_menu.com"> 
+  <!-- <menu > can hold between 2 to 4 food items -->
+
+  <l:food id="LM01"> 
+    <!-- the attribute @id has to be 2 character followed by 2 digits -->
+    <!-- the elements <price> and <calories> within <food> are both optional-->
+    <!-- the elements in <food> has to follow the order <name> <price> <calories> -->
+
+    <l:name>Salade César</l:name>
+    <!-- the <name> element must be less than 50 characters-->
+
+    <l:price unit="euro">90</l:price>
+    <!-- the attirbute @unit can either be euro, dollar, or rand-->
+    <!-- the <price> element must hold a positive integer no large than 999-->
+
+    <l:calories>250</l:calories>
+    <!-- the <calories> element must hold a positive integer no large than 999-->
+  </l:food>
+
+  <l:food id="LM02">
+    <l:name>Sandwich au Poulet Grillé</l:name>
+    <l:calories>450</l:calories>
+  </l:food>
+
+  <l:food id="LM03">
+    <l:name>Pizza Margherita</l:name>
+    <l:price unit="dollar">130</l:price>
+  </l:food>
+
+  <l:food id="LM04">
+    <l:name>Burrito au Bœuf</l:name>
+    <l:price unit="rand">100</l:price>
+    <l:calories>520</l:calories>
+  </l:food >
+</l:menu>

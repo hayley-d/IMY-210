@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<b:menu 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="b_menu.com b.xsd"
+	xmlns:b="b_menu.com"> 
+	<!-- <menu> Can hold between 2 to 4 food items -->
+
+	<b:food id="BM01"> 
+		<!-- id has to be two character followed by 2 digits -->
+		<!-- elements within <food> must all appear, but in any order-->
+		<b:name>Scrambled Eggs</b:name>
+		<!-- the <name> element must be less than 50 characters-->
+		<b:price>50</b:price>
+    		<!-- the <price> element must hold a positive integer no large than 999-->
+		<b:description>Fluffy eggs cooked to perfection.</b:description>
+		<!-- the <description> element must be less than 50 characters-->
+	</b:food>
+
+	<b:food id="BM02">
+		<b:name>Belgian Waffles</b:name>
+		<b:description>Delicious waffles topped with fresh berries and whipped cream.</b:description>
+		<b:price>70</b:price>
+	</b:food>
+
+	<b:food id="BM03">
+		<b:description>Stack of fluffy pancakes loaded with juicy blueberries.</b:description>
+		<b:name>Blueberry Pancakes</b:name>
+		<b:price>65</b:price>
+	</b:food>
+
+	<b:food id="BM04">
+		<b:name>French Toast</b:name>
+		<b:price>70</b:price>
+		<b:description>Thick slices of bread soaked in a sweet cinnamon batter, served with maple syrup.</b:description>
+	</b:food>
+</b:menu>

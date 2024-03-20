@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:l="l_menu.com" xmlns:b="b_menu.com">
+    <xs:import namespace="b_menu.com" schemaLocation="b.xsd"> </xs:import>
+    <xs:import namespace="l_menu.com" schemaLocation="l.xsd"> </xs:import>
+
+
+
+<xs:element name="food">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="b:name" maxOccurs="1"/>
+            <xs:element ref="l:price" maxOccurs="1"/>
+            <xs:element name="description" maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+
+</xs:schema>
