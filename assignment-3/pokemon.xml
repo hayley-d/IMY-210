@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="a3-style.xsl"?> 
+<!-- your details -->
+
+<pokedex>
+  <pokemon>
+    <pokedex_number>001</pokedex_number>
+    <species>BULBASAUR</species>
+    <base_stats>
+      <atk>5</atk>
+      <def>5</def>
+      <satk>7</satk>
+      <sdef>7</sdef>
+      <spd>5</spd>
+    </base_stats>
+    <types>
+      <type type="primary">GRASS</type>
+      <type type="secondary">POISON</type>
+    </types>
+    <evolution_chain>
+      <evolution>
+        <pokedex_number>001</pokedex_number>
+        <species>BULBASAUR</species>
+      </evolution>
+      <evolution>
+        <pokedex_number>002</pokedex_number>
+        <species>IVYSAUR</species>
+      </evolution>
+      <evolution>
+        <pokedex_number>003</pokedex_number>
+        <species>BULBASAUR</species>
+      </evolution>
+    </evolution_chain>
+    <size>
+      <size_category class="S">SMALL</size_category>
+      <height>
+        <inches>28.0</inches>
+        <meters>0.7</meters>
+      </height>
+      <weight>
+        <weight_class>1</weight_class>
+        <pounds>15.2</pounds>
+        <kilograms>6.9</kilograms>
+      </weight>
+    </size>
+    <capture_rate>20</capture_rate>
+    <exp_drop>15</exp_drop>
+  </pokemon>
+  <pokemon>
+    <pokedex_number>003</pokedex_number>
+    <species>VENUSAUR</species>
+    <base_stats>
+      <atk>8</atk>
+      <def>8</def>
+      <satk>10</satk>
+      <sdef>10</sdef>
+      <spd>8</spd>
+    </base_stats>
+    <types>
+      <type type="primary">GRASS</type>
+      <type type="secondary">POISON</type>
+    </types>
+    <basic_abilities>
+      <basic_ability>Overgrow</basic_ability>
+      <basic_ability>Venom</basic_ability>
+      <basic_ability>Chlorophyll</basic_ability>
+    </basic_abilities>
+    <high_abilities>
+      <high_ability>Leaf Guard</high_ability>
+      <high_ability>Flower Gift</high_ability>
+    </high_abilities>
+    <evolution_chain>
+      <evolution>
+        <pokedex_number>001</pokedex_number>
+        <species>BULBASAUR</species>
+      </evolution>
+      <evolution>
+        <pokedex_number>002</pokedex_number>
+        <species>IVYSAUR</species>
+      </evolution>
+      <evolution>
+        <pokedex_number>003</pokedex_number>
+        <species>VENUSAUR</species>
+      </evolution>
+    </evolution_chain>
+    <size>
+      <size_category class="L">LARGE</size_category>
+      <height>
+        <inches>79.0</inches>
+        <meters>2.0</meters>
+      </height>
+      <weight>
+        <weight_class>5</weight_class>
+        <pounds>220.5</pounds>
+        <kilograms>100.0</kilograms>
+      </weight>
+    </size>
+    <capture_rate>5</capture_rate>
+    <exp_drop>50</exp_drop>
+  </pokemon>
+</pokedex>
