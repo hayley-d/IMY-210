@@ -1,0 +1,30 @@
+{
+  "customers": {
+    "customer": {
+      "attributes": {
+        "id": 55000
+      },
+      "name":"Character Group",
+      "addresses": [
+        {
+        "street": "100 Main",
+        "city": "Framingham",
+        "state": "MA",
+        "zip": "01701"
+      },
+        {
+          "street": "720 Prospect",
+          "city": "Framingham",
+          "state": "MA",
+          "zip": "01701"
+        },
+        {
+          "street": "120 Ridge",
+          "city": "Framingham",
+          "state": "MA",
+          "zip": "01760"
+        }
+      ]
+    }
+  }
+}
