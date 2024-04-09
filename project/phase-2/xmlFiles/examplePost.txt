@@ -1,0 +1,75 @@
+{
+  "store": {
+    "_attributes" :{
+         "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+         "xsi:noNamespaceSchemaLocation": "validate.xsd"
+    },
+    "information": {
+        "_attributes":{
+            "id": "2"
+        },
+      "name":{
+        "_text": "Wize Books"
+      },
+      "description": {
+        "_text":"desc"
+      },
+      "owner": {
+        "_attributes":{
+            "userId": "43"
+        },
+        "_text": "Tom Nook"
+      }
+    },
+    "products":{
+        "product":{
+            "_attributes":{
+                "id":"tom-nook-textbook-1",
+                "language":"en",
+                "edition":"12"
+            },
+            "title":{
+                "_text":"Introduction to economy"
+            },
+            "author":{
+                "_text":"Tom Nook"
+            },
+            "isbn":{
+                "_text":"978-0-13-518276-3"
+            },
+            "sku":{
+                "_text":"ECON-INTRO-2"
+            },
+            "description":{
+                "_text":"Introduction to economics introduces you to economics"
+            },
+            "price":{
+                "_attributes":{
+                    "currency":"ZAR"
+                },
+                 "_text":"250.00"
+            },
+            "department":{
+                "_text":"Economics"
+            },
+            "modules":{
+                "module":{
+                    "_attributes":{
+                        "id":"ecn210",
+                        "name":"ECN 210"
+                    }
+                }
+            },
+            "availability":{
+                "_text":"in stock"
+            },
+            "condition":{
+                "_text":"great"
+            },
+            "image":{
+                "_text":"./images/xml-books1.png"
+            }
+        }
+    }
+  }
+}

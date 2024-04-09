@@ -1,0 +1,4 @@
+<!ELEMENT stores (store*)>
+<!ELEMENT store (id,name)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT name (#PCDATA)>

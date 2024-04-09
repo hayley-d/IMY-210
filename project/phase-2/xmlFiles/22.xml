@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<store xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="validate.xsd">
+    <information id="4">
+        <name>
+            Wize Books
+        </name>
+        <description>
+            desc
+        </description>
+        <owner userId="22">
+            Tom Nook
+        </owner>
+    </information>
+    <products>
+        <product id="tom-nook-textbook-1" language="en" edition="12">
+            <title>
+                Introduction to economy
+            </title>
+            <author>
+                Tom Nook
+            </author>
+            <isbn>
+                978-0-13-518276-3
+            </isbn>
+            <sku>
+                ECON-INTRO-2
+            </sku>
+            <description>
+                Introduction to economics introduces you to economics
+            </description>
+            <price currency="ZAR">
+                250.00
+            </price>
+            <department>
+                Economics
+            </department>
+            <modules>
+                <module id="ecn210" name="ECN 210"/>
+            </modules>
+            <availability>
+                in stock
+            </availability>
+            <condition>
+                great
+            </condition>
+            <image>
+                ./images/xml-books1.png
+            </image>
+        </product>
+    </products>
+</store>

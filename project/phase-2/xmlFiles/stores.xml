@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--Hayley Dodkins u21528790-->
+<!DOCTYPE stores SYSTEM "schema.dtd">
+<stores>
+    <store>
+        <id>
+            22
+        </id>
+        <name>
+            Wize Books
+        </name>
+    </store>
+    <store>
+        <id>
+            43
+        </id>
+        <name>
+            John's textbooks
+        </name>
+    </store>
+
+</stores>

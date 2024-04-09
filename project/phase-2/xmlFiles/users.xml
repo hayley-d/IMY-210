@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="userValidate.xsd">
+  <user>
+    <id>43</id>
+    <username>john_doe</username>
+    <password>password123</password>
+    <role>store_owner</role>
+  </user>
+  <user>
+    <id>2</id>
+    <username>jane_smith</username>
+    <password>password456</password>
+    <role>store_owner</role>
+  </user>
+  <user>
+    <id>53</id>
+    <username>Mooncake</username>
+    <password>123</password>
+    <role>customer</role>
+  </user>
+</users>
