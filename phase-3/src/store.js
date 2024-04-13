@@ -11,7 +11,9 @@ export const useStore  = defineStore('store', {
         async fetchStores() {
             try {
                 const response = await fetch('http://localhost:3000/stores');
+
                 this.stores = await response.json();
+                console.log( this.stores );
             } catch (error) {
                 console.error('Error fetching stores:', error);
             }
