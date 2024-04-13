@@ -2,20 +2,27 @@
 import { ref, onMounted } from 'vue';
 import { useStore } from '../store.js';
 export default {
-    setup() {
-        const store = useStore();
-        const loaded = ref(false);
-
-        onMounted(async () => {
-            await store.fetchStores();
-            console.log('Stores:', store.stores);
-            loaded.value = true;
-        });
-
+    data() {
         return {
-            stores: store.stores,
-            loaded
+            stores: [],
+            loaded: false
         };
+    },
+    mounted() {
+        this.fetchStores();
+    },
+    methods: {
+        async fetchStores() {
+            try {
+                const store = useStore();
+                const response = await fetch('http://localhost:3000/stores');
+                this.stores = await response.json();
+                console.log('Stores:', this.stores);
+                this.loaded = true;
+            } catch (error) {
+                console.error('Error fetching stores:', error);
+            }
+        }
     }
 };
 </script>
@@ -26,7 +33,6 @@ export default {
         <div v-if="loaded">
             <ul>
                 <li v-for="store in stores" :key="store.id">
-                    {{ store.name }}
                     <router-link :to="'/store/' + store.id">{{ store.name }}</router-link>
                 </li>
             </ul>
@@ -38,6 +44,10 @@ export default {
 </template>
 
 <style scoped>
+
+ul{
+    list-style: none;
+}
     li{
         color: white;
         font-size: 18px;
