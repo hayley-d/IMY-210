@@ -1,87 +1,95 @@
 <template>
-  <div class="item">
-    <i>
-      <slot name="icon"></slot>
-    </i>
-    <div class="details">
-      <h3>
-        <slot name="heading"></slot>
-      </h3>
-      <slot></slot>
+    <div id="loginPage">
+        <h1>Login</h1>
+        <form>
+            <input v-model="username" type="text" name="username" id="username" placeholder="Username"/>
+            <input v-model="password" type="password" name="password" id="password" placeholder="Password"/>
+        </form>
+        <button @click="login">Login</button>
     </div>
-  </div>
+
 </template>
 
 <style scoped>
-.item {
-  margin-top: 2rem;
-  display: flex;
-  position: relative;
-}
-
-.details {
-  flex: 1;
-  margin-left: 1rem;
-}
-
-i {
-  display: flex;
-  place-items: center;
-  place-content: center;
-  width: 32px;
-  height: 32px;
-
-  color: var(--color-text);
-}
-
-h3 {
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin-bottom: 0.4rem;
-  color: var(--color-heading);
-}
-
-@media (min-width: 1024px) {
-  .item {
-    margin-top: 0;
-    padding: 0.4rem 0 1rem calc(var(--section-gap) / 2);
+  #loginPage{
+      display: flex;
+      flex-direction: column;
+      width: 50vw;
+      height:50vh;
+      align-items: center;
+      gap:50px;
   }
 
-  i {
-    top: calc(50% - 25px);
-    left: -26px;
-    position: absolute;
-    border: 1px solid var(--color-border);
-    background: var(--color-background);
-    border-radius: 8px;
-    width: 50px;
-    height: 50px;
+  form{
+      display: flex;
+      flex-direction: column;
+      gap:30px;
+      align-items: center;
   }
 
-  .item:before {
-    content: ' ';
-    border-left: 1px solid var(--color-border);
-    position: absolute;
-    left: 0;
-    bottom: calc(50% + 25px);
-    height: calc(50% - 25px);
+  input{
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      padding:5px;
+      font-size: 18px;
   }
 
-  .item:after {
-    content: ' ';
-    border-left: 1px solid var(--color-border);
-    position: absolute;
-    left: 0;
-    top: calc(50% + 25px);
-    height: calc(50% - 25px);
+  button{
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      padding:10px;
+      font-size: 18px;
+      cursor: pointer;
   }
 
-  .item:first-of-type:before {
-    display: none;
+  button:hover{
+      background-color: plum;
+      color: white;
   }
-
-  .item:last-of-type:after {
-    display: none;
-  }
-}
 </style>
+
+<script >
+import { ref } from 'vue';
+import { useStore } from '../store.js';
+import router from '../router';
+
+export default {
+    setup() {
+        const store = useStore();
+        const username = ref('');
+        const password = ref('');
+
+        const login = async () => {
+            try {
+                const id = generateRandomId();
+                await store.loginUser(username.value,id,password.value,'customer');
+                console.log("Logged in successfully!");
+                router.push('/');
+            } catch (error) {
+                console.error('Error logging in:', error);
+            }
+        };
+
+        return {
+            username,
+            password,
+            login
+        };
+    }
+};
+
+function generateRandomId(){
+    const idLength = 6; // Length of the generated ID
+    const characters = '0123456789'; // Characters to choose from for the ID
+    let result = '';
+
+    for (let i = 0; i < idLength; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        result += characters.charAt(randomIndex);
+    }
+
+    return result;
+}
+</script>

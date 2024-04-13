@@ -8,6 +8,14 @@ export default {
             loaded: false
         };
     },
+    computed: {
+        user() {
+            return useStore().currentUser;
+        },
+        userName() {
+            return this.user ? this.user.username : null;
+        }
+    },
     mounted() {
         this.fetchStores();
     },
@@ -22,6 +30,9 @@ export default {
             } catch (error) {
                 console.error('Error fetching stores:', error);
             }
+        },
+        goToLogin() {
+            this.$router.push('/login');
         }
     }
 };
@@ -30,6 +41,11 @@ export default {
 <template>
     <div>
         <h1>Store Directory</h1>
+
+        <button v-if="!user" @click="goToLogin">Login</button>
+        <div v-else>
+            <p>Welcome, {{ userName }}</p>
+        </div>
         <div v-if="loaded">
             <ul>
                 <li v-for="store in stores" :key="store.id">
