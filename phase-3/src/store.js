@@ -123,5 +123,19 @@ export const useStore  = defineStore('store', {
                 console.error('Error adding product:', error);
             }
         },
+        async updateStore(data,id) {
+            try {
+                const response = await fetch(`http://localhost:3000/updateDetails/${id}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+                console.log(response);
+            } catch (error) {
+                console.error('Error adding product:', error);
+            }
+        },
     }
 })
