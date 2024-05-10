@@ -11,13 +11,20 @@ import Cart from './components/Cart.vue';
 
 const routes = [
     { path: '/', component: StoreDirectory },
-    { path: '/store/:id', component: StoreDetails },
-    { path: '/manage/:id', component: ManageStore },
-    { path: '/edit/:StoreId/:productId', component: EditProduct },
-    { path: '/add/:StoreId', component: AddProduct },
+    {
+        path: '/store/:storeId',
+        component: StoreDetails,
+        props: (route) => {
+            const storeId = route.params.storeId;
+            return { storeId };
+        },
+    },
+    { path: '/manage/:storeId', component: ManageStore },
+    { path: '/edit/:storeId/:productId', component: EditProduct },
+    { path: '/add/:storeId', component: AddProduct },
     { path: '/create/:userId', component: CreateStore },
-    { path: '/cart/:userId', component: Cart },
-    { path: '/login', component: Login }
+    { path: '/cart', component: Cart },
+    { path: '/login', component: Login },
 ];
 
 const router = createRouter({
