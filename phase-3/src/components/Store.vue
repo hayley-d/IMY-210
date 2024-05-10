@@ -1,88 +1,162 @@
-<script setup>
-import WelcomeItem from './Login.vue'
-import DocumentationIcon from './icons/IconDocumentation.vue'
-import ToolingIcon from './icons/IconTooling.vue'
-import EcosystemIcon from './icons/IconEcosystem.vue'
-import CommunityIcon from './icons/IconCommunity.vue'
-import SupportIcon from './icons/IconSupport.vue'
+<script>
+import { useStore } from '../store.js';
+import router from '../router';
+export default {
+    data() {
+        return {
+            currentStore: {},
+            loading: true
+        };
+    },
+    computed: {
+        storeName() {
+            return useStore().currentStore['information']?.[0]?.name?.[0] || '';
+        },
+        storeDescription() {
+            return useStore().currentStore['information']?.[0]?.description?.[0] || '';
+        },
+        ownerName() {
+            return useStore().currentStore['information'][0].owner[0]['_'];
+        },
+        products() {
+            return useStore().currentStore.products[0].product;
+        },
+        user() {
+            return useStore().currentUser;
+        },
+        userName() {
+            return this.user ? this.user.username : null;
+        },
+        cartCount() {
+            return useStore().cart.length;
+        },
+        isLoading() {
+            return this.loading; // Computed property to track loading state
+        },
+
+
+    },
+    props: ['storeId'],
+    async mounted() {
+        await this.fetchStore(this.storeId);
+    },
+    methods: {
+        async fetchStore(storeId) {
+            try {
+                const fetchedStore = await useStore().fetchStore(storeId);
+                this.currentStore = useStore().currentStore.store;
+                console.log(this.currentStore)
+                this.loading = false;
+            } catch (error) {
+                console.error('Error fetching store:', error);
+            }
+        },
+        goToLogin() {
+            // Navigate to the login route
+            router.push('/login');
+        },
+        async addToCart(product) {
+            try {
+                useStore().addToCart(product);
+            } catch (error) {
+                console.error('Error adding item to cart:', error);
+            }
+        },
+        viewCart() {
+            router.push('/cart');
+        },
+        back() {
+            router.push('/');
+        },
+    },
+};
 </script>
 
 <template>
-  <WelcomeItem>
-    <template #icon>
-      <DocumentationIcon />
-    </template>
-    <template #heading>Documentation</template>
+    <div id="storePage">
+        <button @click="back" class="backBtn">Back</button>
+        <div v-if="user">
+            <button @click="viewCart" class="cartBtn">Cart ({{ cartCount }})</button>
+        </div>
+        <div v-if="!isLoading">
+            <button v-if="!user" @click="goToLogin" class="loginBtn">Login</button>
+            <div v-else>
+                <p>Welcome, {{ userName }}</p>
+            </div>
+            <p id="storeName">{{ storeName }}</p>
+            <p id="storeDesc">{{ storeDescription }}</p>
+            <h2>Products</h2>
+            <div v-for="product in products" :key="product.id">
+                <h3 class="productHeading">{{ product.title[0] }}</h3>
+                <p class="description">{{ product.description[0] }}</p>
+                <p>{{ product.price[0]['$'].currency }} {{ product.price[0]['_'] }}</p>
+                <div v-if="user">
+                    <button class="cartBtn" @click="addToCart(product)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div v-else>
+            <p>Loading...</p>
+            <!-- You can also add a spinner or other loading indicator here -->
+        </div>
+    </div>
 
-    Vue’s
-    <a href="https://vuejs.org/" target="_blank" rel="noopener">official documentation</a>
-    provides you with all information you need to get started.
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
-      <ToolingIcon />
-    </template>
-    <template #heading>Tooling</template>
-
-    This project is served and bundled with
-    <a href="https://vitejs.dev/guide/features.html" target="_blank" rel="noopener">Vite</a>. The
-    recommended IDE setup is
-    <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VSCode</a> +
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank" rel="noopener">Volar</a>. If
-    you need to test your components and web pages, check out
-    <a href="https://www.cypress.io/" target="_blank" rel="noopener">Cypress</a> and
-    <a href="https://on.cypress.io/component" target="_blank" rel="noopener"
-      >Cypress Component Testing</a
-    >.
-
-    <br />
-
-    More instructions are available in <code>README.md</code>.
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
-      <EcosystemIcon />
-    </template>
-    <template #heading>Ecosystem</template>
-
-    Get official tools and libraries for your project:
-    <a href="https://pinia.vuejs.org/" target="_blank" rel="noopener">Pinia</a>,
-    <a href="https://router.vuejs.org/" target="_blank" rel="noopener">Vue Router</a>,
-    <a href="https://test-utils.vuejs.org/" target="_blank" rel="noopener">Vue Test Utils</a>, and
-    <a href="https://github.com/vuejs/devtools" target="_blank" rel="noopener">Vue Dev Tools</a>. If
-    you need more resources, we suggest paying
-    <a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">Awesome Vue</a>
-    a visit.
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
-      <CommunityIcon />
-    </template>
-    <template #heading>Community</template>
-
-    Got stuck? Ask your question on
-    <a href="https://chat.vuejs.org" target="_blank" rel="noopener">Vue Land</a>, our official
-    Discord server, or
-    <a href="https://stackoverflow.com/questions/tagged/vue.js" target="_blank" rel="noopener"
-      >StackOverflow</a
-    >. You should also subscribe to
-    <a href="https://news.vuejs.org" target="_blank" rel="noopener">our mailing list</a> and follow
-    the official
-    <a href="https://twitter.com/vuejs" target="_blank" rel="noopener">@vuejs</a>
-    twitter account for latest news in the Vue world.
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
-      <SupportIcon />
-    </template>
-    <template #heading>Support Vue</template>
-
-    As an independent project, Vue relies on community backing for its sustainability. You can help
-    us by
-    <a href="https://vuejs.org/sponsor/" target="_blank" rel="noopener">becoming a sponsor</a>.
-  </WelcomeItem>
 </template>
+
+<style scoped>
+
+#storePage{
+    width:100vw;
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+.productHeading{
+    color:plum;
+    margin-top:20px;
+}
+.description{
+    width: fit-content;
+}
+
+.cartBtn, .backBtn{
+    border: none;
+    border-radius: 10px;
+    background-color: #222222;
+    color: white;
+    cursor: pointer;
+    padding:10px;
+    font-size: 16px;
+    margin-top:5px;
+    margin-bottom: 5px;
+    width:fit-content;
+}
+
+.loginBtn{
+    border: none;
+    border-radius: 10px;
+    background-color: #222222;
+    color: white;
+    cursor: pointer;
+    padding:10px;
+    font-size: 18px;
+    margin-top:10px;
+    margin-bottom: 10px;
+}
+
+.loginBtn:hover, .cartBtn:hover, .backBtn:hover{
+    background-color: plum;
+}
+
+#storeName{
+    font-size: 30px;
+    color:plum;
+    margin-bottom: 5px;
+}
+
+#storeDesc{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+</style>
