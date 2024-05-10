@@ -18,52 +18,52 @@
         <form @submit.prevent="submitForm2">
 
             <label for="productLang">Product Language</label>
-            <input type="text" id="productLang" value="En">
+            <input type="text" id="productLang" v-model="productLang">
 
             <label for="productEd">Product Edition</label>
-            <input type="text" id="productEd">
+            <input type="text" id="productEd" v-model="productEd">
 
             <label for="productTitle">Product Title</label>
-            <input type="text" id="productTitle">
+            <input type="text" id="productTitle" v-model="productTitle">
 
             <label for="productAuthor">Product Author</label>
-            <input type="text" id="productAuthor">
+            <input type="text" id="productAuthor" v-model="productAuthor">
 
             <label for="productIsbn">Product ISBN</label>
-            <input type="text" id="productIsbn">
+            <input type="text" id="productIsbn" v-model="productIsbn">
 
             <label for="productSku">Product SKU</label>
-            <input type="text" id="productSku">
+            <input type="text" id="productSku" v-model="productSku">
 
             <label for="productDesc">Product Description</label>
-            <input type="text" id="productDesc">
+            <input type="text" id="productDesc" v-model="productDesc">
 
             <label for="productPrice">Product Price</label>
-            <input type="text" id="productPrice">
+            <input type="text" id="productPrice" v-model="productPrice">
 
             <label for="productCurrency">Product currency</label>
-            <select id="productCurrency" name="productCurrency">
+            <select id="productCurrency" name="productCurrency" v-model="productCurrency">
                 <option value="USD">USD</option>
                 <option value="ZAR">ZAR</option>
             </select>
 
             <label for="productDepartment">Product Department</label>
-            <input type="text" id="productDepartment">
+            <input type="text" id="productDepartment" v-model="productDepartment">
 
             <label for="productModuleName">Module Name</label>
-            <input type="text" id="productModuleName">
+            <input type="text" id="productModuleName" v-model="productModuleName">
 
             <label for="productModuleCode">Module Code</label>
-            <input type="text" id="productModuleCode">
+            <input type="text" id="productModuleCode" v-model="productModuleCode">
 
             <label for="productAv">Availability</label>
-            <select id="productAv" name="productAv">
+            <select id="productAv" name="productAv" v-model="productAv">
                 <option value="In Stock">In Stock</option>
                 <option value="Out of Stock">Out of Stock</option>
             </select>
 
             <label for="productCon">Condition</label>
-            <select id="productCon" name="productCon">
+            <select id="productCon" name="productCon" v-model="productCon">
                 <option value="Great">Great</option>
                 <option value="Good">Good</option>
                 <option value="Used">Used</option>
@@ -71,7 +71,7 @@
             </select>
 
             <label for="productImg">Image Location</label>
-            <input type="text" id="productImg">
+            <input type="text" id="productImg" v-model="productImg">
 
             <button>Add Product</button>
         </form>
@@ -87,7 +87,22 @@ export default {
     data() {
         return {
             storeName: '',
-            description: ''
+            description: '',
+            productLang: 'En',
+            productEd: '',
+            productTitle: '',
+            productAuthor: '',
+            productIsbn: '',
+            productSku: '',
+            productDesc: '',
+            productPrice: '',
+            productCurrency: 'USD',
+            productDepartment: '',
+            productModuleName: '',
+            productModuleCode: '',
+            productAv: 'In Stock',
+            productCon: 'Great',
+            productImg: ''
         };
     },
     computed: {
@@ -111,7 +126,13 @@ export default {
     },
     methods: {
         async submitForm1() {
-            const store = {
+            console.log("Current User",this.user);
+            console.log("User id",this.userId)
+            const details = {
+               name: this.storeName,
+              description: this.description
+            }
+            /*const store = {
                 "store": {
                     "_attributes" :{
                         "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
@@ -138,10 +159,10 @@ export default {
                         "product":[]
                     }
                 }
-            };
+            };*/
 
-            console.log('Updated Store:', store);
-            await useStore().updateStore(store, this.userId);
+            console.log('Updated Store:', details);
+            await useStore().updateStore(details, useStore().currentUser.id);
             console.log('Store updated successfully');
             router.push('/');
         },
@@ -149,40 +170,45 @@ export default {
             router.push('/');
         },
         async submitForm2() {
-            const store = {
-                "store": {
-                    "_attributes" :{
-                        "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-                        "xsi:noNamespaceSchemaLocation": "validate.xsd"
-                    },
-                    "information": {
-                        "_attributes":{
-                            "id": `${this.userId}`
-                        },
-                        "name":{
-                            "_text": this.storeName
-                        },
-                        "description": {
-                            "_text": this.description
-                        },
-                        "owner": {
-                            "_attributes":{
-                                "userId": `${this.userId}`
-                            },
-                            "_text": this.userName
-                        }
-                    },
-                    "products":{
-                        "product":[]
+            //Generate an id
+            const id = this.generateRandom();
+            const newProduct =
+            {
+                id: id,
+                language:this.productLang,
+                edition:this.productEd,
+                title:this.productTitle,
+                author:this.productAuthor,
+                isbn:this.productIsbn,
+                sku:this.productSku,
+                description:this.productDesc,
+                price:this.productPrice,
+                currency:this.productCurrency,
+                department:this.productDepartment,
+                modules:[
+                    {
+                        id:this.productModuleCode,
+                        name:this.productModuleName
                     }
-                }
-            };
+                ],
+                availability:this.productAv,
+                condition:this.productCon,
+                image:this.productImg
+            }
 
-            console.log('Updated Store:', store);
-            await useStore().updateStore(store, this.userId);
-            console.log('Store updated successfully');
+            console.log('New Product:', newProduct);
+            await useStore().createProduct(newProduct, useStore().currentUser.id);
+            console.log('Product Added successfully');
             router.push('/');
         },
+        generateRandom(){
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let result = '';
+            for (let i = 0; i < 4; i++) {
+                result += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return result;
+        }
     },
 };
 </script>
