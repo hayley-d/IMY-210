@@ -6,22 +6,27 @@ const parser = new xml2js.Parser();
 const builder = new xml2js.Builder();
 const xmlFormatter = require('xml-formatter');
 const convert = require('xml-js');
+const cors = require('cors'); // Import the CORS module
+
 /*Hayley Dodkins u21528790*/
 const app = express();
 const PORT = 3000; // or any other port you prefer
+
+app.use(cors()); // Enable CORS for all routes
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //Read all stores works
-app.get('/data', (req, res) => {
-    fs.readFile('./phase1/sample.xml', 'utf8', (err, data) => {
+app.get('/stores', (req, res) => {
+    fs.readFile('./xmlFiles/stores.xml', 'utf8', (err, data) => {
         if (err) {
             console.error(err);
             res.status(500).send('Failed to read data');
             return;
         }
 
+        const parser = new xml2js.Parser();
         parser.parseString(data, (err, result) => {
             if (err) {
                 console.error(err);
@@ -29,13 +34,18 @@ app.get('/data', (req, res) => {
                 return;
             }
 
-            res.json(result);
+            const stores = result.stores.store.map(store => ({
+                id: parseInt(store.id[0].trim()),
+                name: store.name[0].trim()
+            }));
+
+            res.json(stores);
         });
     });
 });
 
 //create new product works
-app.post('/products/:storeId', (req, res) => {
+/*app.post('/products/:storeId', (req, res) => {
     const storeId = req.params.storeId;
     const filename = `./xmlFiles/${storeId}.xml`;
     const newProduct = req.body;
@@ -65,7 +75,8 @@ app.post('/products/:storeId', (req, res) => {
                 res.status(500).send('Failed to parse XML');
                 return;
             }
-
+            const sanitizedTitle = newProduct.title.replace(/[^\w\s]/gi, ''); // Remove special characters from the title
+            console.log(sanitizedTitle)
             //Create new product
             const product = {
                 '$': {
@@ -73,7 +84,7 @@ app.post('/products/:storeId', (req, res) => {
                     language: newProduct.language,
                     edition: newProduct.edition
                 },
-                title: newProduct.title,
+                title: sanitizedTitle,
                 author: newProduct.author,
                 isbn: newProduct.isbn,
                 sku: newProduct.sku,
@@ -94,7 +105,23 @@ app.post('/products/:storeId', (req, res) => {
             };
 
             // add new product
+
+
+            // Check if products array exists, if not create it
+            if (!result.store.products[0])
+            {
+                result.store.products[0] = []; // Create an empty products array
+            }
+
+            if (!result.store.products[0].product) {
+                result.store.products[0].product = [];
+            }
+
+            console.log(result);
+
             result.store.products[0].product.push(product);
+
+            console.log(result.store.products[0]);
 
             const builder = new xml2js.Builder();
             const updatedData = builder.buildObject(result);
@@ -108,6 +135,65 @@ app.post('/products/:storeId', (req, res) => {
                 }
                 res.send('Product created successfully');
             });
+        });
+    });
+});*/
+
+app.post('/newProduct/:storeId',(req,res)=>{
+    const storeId = req.params.storeId;
+    const filename = `./xmlFiles/${storeId}.xml`;
+    const newProduct = req.body;
+
+    // Check the required fields
+    const requiredFields = ['id', 'language', 'edition', 'title', 'author', 'isbn', 'sku', 'description', 'price', 'currency', 'department', 'modules', 'availability', 'condition', 'image'];
+    const missingFields = requiredFields.filter(field => !newProduct.hasOwnProperty(field));
+
+    if (missingFields.length > 0) {
+        res.status(400).send(`Missing required fields: ${missingFields.join(', ')}`);
+        return;
+    }
+
+    // Construct the XML for the new product
+    const productXML = `
+        <product id="${newProduct.id}" language="${newProduct.language}" edition="${newProduct.edition}">
+            <title>${newProduct.title}</title>
+            <author>${newProduct.author}</author>
+            <isbn>${newProduct.isbn}</isbn>
+            <sku>${newProduct.sku}</sku>
+            <description>${newProduct.description}</description>
+            <price currency="${newProduct.currency}">${newProduct.price}</price>
+            <department>${newProduct.department}</department>
+            <availability>${newProduct.availability}</availability>
+            <condition>${newProduct.condition}</condition>
+            <image>${newProduct.image}</image>
+        </product>
+    `;
+    // Read the existing XML file
+    fs.readFile(filename, 'utf8', (err, data) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Failed to read data');
+            return;
+        }
+
+        // Find the position to insert the new product (e.g., before the closing </products> tag)
+        const insertionIndex = data.lastIndexOf('</products>');
+        if (insertionIndex === -1) {
+            res.status(500).send('Failed to find insertion point in XML');
+            return;
+        }
+
+        // Insert the new product XML
+        const updatedData = `${data.slice(0, insertionIndex)}${productXML}${data.slice(insertionIndex)}`;
+
+        // Write the updated XML back to the file
+        fs.writeFile(filename, updatedData, (err) => {
+            if (err) {
+                console.error(err);
+                res.status(500).send('Failed to update data');
+                return;
+            }
+            res.send('Product created successfully');
         });
     });
 });
@@ -180,6 +266,57 @@ app.put('/update/:storeId/:productId', (req, res) => {
                 condition: updatedProduct.condition,
                 image: updatedProduct.image
             };
+
+            // Convert
+            const builder = new xml2js.Builder();
+            const updatedData = builder.buildObject(result);
+
+            // Write back to the file
+            fs.writeFile(filename, updatedData, (err) => {
+                if (err) {
+                    console.error(err);
+                    res.status(500).send('Failed to update data');
+                    return;
+                }
+                res.send('Product updated successfully');
+            });
+        });
+    });
+});
+
+//update store details
+app.put('/updateDetails/:storeId', (req, res) => {
+    const storeId = req.params.storeId;
+    const filename = `./xmlFiles/${storeId}.xml`;
+    const updatedDetails = req.body;
+    console.log(req.params);
+    /*
+    * {
+    *   name: "",
+    *   description: ""
+    * }
+    * */
+
+    // Read the XML file
+    fs.readFile(filename, 'utf8', (err, data) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Failed to read data');
+            return;
+        }
+
+        const xml2js = require('xml2js');
+        const parser = new xml2js.Parser();
+        parser.parseString(data, (err, result) => {
+            if (err) {
+                console.error(err);
+                res.status(500).send('Failed to parse XML');
+                return;
+            }
+
+            // Find product to update
+            result.store.information[0].name[0] = updatedDetails.name;
+            result.store.information[0].description[0] = updatedDetails.description;
 
             // Convert
             const builder = new xml2js.Builder();
@@ -374,6 +511,11 @@ app.post('/create',(req,res) =>{
     // Construct the filename based on userId
     const filename = `./xmlFiles/${userId}.xml`;
 
+    // Create an empty products array if it doesn't exist
+    if (!storeData.store.products) {
+        storeData.store.products = [];
+    }
+
     fs.writeFile(filename, formattedXml, (err) => {
         if (err) {
             console.error(err);
@@ -500,6 +642,14 @@ app.put('/update/:storeId', (req, res) => {
 app.post('/register', (req, res) => {
     const newUser = req.body;
 
+    /*
+    {
+        "id":"67",
+        "username":"Hayley",
+        "password":"123",
+        "role":"customer"
+    }
+*/
     // Read the XML file
     fs.readFile('./xmlFiles/users.xml', 'utf8', (err, data) => {
         if (err) {
@@ -532,6 +682,58 @@ app.post('/register', (req, res) => {
                     return;
                 }
                 res.send('User registered successfully');
+            });
+        });
+    });
+});
+
+//Update user
+app.put('/updateUser/:userId', (req, res) => {
+    const userId = req.params.userId;
+    const filename = `./xmlFiles/users.xml`;
+    const updatedRole = 'store_owner';
+
+
+    // Read the XML file
+    fs.readFile(filename, 'utf8', (err, data) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Failed to read data');
+            return;
+        }
+
+        const xml2js = require('xml2js');
+        const parser = new xml2js.Parser();
+        parser.parseString(data, (err, result) => {
+            if (err) {
+                console.error(err);
+                res.status(500).send('Failed to parse XML');
+                return;
+            }
+            console.dir(result);
+            // Find the user in the file according to the id
+            const users = result.users.user;
+            const userIndex = users.findIndex(user => user.id == userId);
+            if (userIndex === -1) {
+                res.status(404).send('User not found');
+                return;
+            }
+            console.dir(result);
+            // Update the role of the user to store_owner
+            result.users.user[userIndex].role = updatedRole;
+            console.dir(result);
+            // Convert
+            const builder = new xml2js.Builder();
+            const updatedData = builder.buildObject(result);
+
+            // Write back to the file
+            fs.writeFile(filename, updatedData, (err) => {
+                if (err) {
+                    console.error(err);
+                    res.status(500).send('Failed to update user');
+                    return;
+                }
+                res.send('User updated successfully');
             });
         });
     });
