@@ -86,7 +86,7 @@ export default {
             <p id="storeName">{{ storeName }}</p>
             <p id="storeDesc">{{ storeDescription }}</p>
             <h2>Products</h2>
-            <div v-for="product in products" :key="product.id">
+            <div class="prolist" v-for="product in products" :key="product.id">
                 <h3 class="productHeading">{{ product.title[0] }}</h3>
                 <p class="description">{{ product.description[0] }}</p>
                 <p>{{ product.price[0]['$'].currency }} {{ product.price[0]['_'] }}</p>
@@ -117,7 +117,7 @@ export default {
     margin-top:20px;
 }
 .description{
-    width: fit-content;
+    width: 60vw;
 }
 
 .cartBtn, .backBtn{
@@ -158,5 +158,10 @@ export default {
 #storeDesc{
     font-size: 20px;
     margin-bottom: 20px;
+    width:60vw;
+}
+
+.prolist{
+    width:60vw;
 }
 </style>
