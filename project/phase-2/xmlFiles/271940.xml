@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<store xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="validate.xsd">
+  <information id="271940">
+    <name>Slothful Pages</name>
+    <description>We only sell sloth related books.</description>
+    <owner userId="271940">&#xD;
+            SlothySavant&#xD;
+        </owner>
+  </information>
+  <products>
+    <product id="BAlE1" language="En" edition="70th">
+      <title>Sloths in the Amazon</title>
+      <author>Hayley Dodkins</author>
+      <isbn>123123-2131-223</isbn>
+      <sku>123123-2131-223</sku>
+      <description>About sloths living in the amazon</description>
+      <price currency="USD">1500</price>
+      <department>Sloth</department>
+      <modules>
+        <module id="COS" name="COS"/>
+      </modules>
+      <availability>In Stock</availability>
+      <condition>Great</condition>
+      <image>Sloth.png</image>
+    </product>
+
+    <product id="BAlC2" language="En" edition="1st">
+      <title>Life in the Sloth Lane: Slow Down and Smell the Hibiscus</title>
+      <author>Lucy Cooke</author>
+      <isbn>978-0761193227</isbn>
+      <sku>0761193227</sku>
+      <description>Perhaps it’s because they’ve mastered the art of taking it slow in a world whose frenzied pace is driving the rest of us crazy. Here, in a mindfulness book like no other, heart-tuggingly cute photographs of these always-chill creatures are paired with words of wisdom, all to inspire us to slow down, stop to enjoy the little things, and come up relaxed, centered, and smiling.</description>
+      <price currency="USD">188</price>
+      <department>SLO</department>
+      <modules>
+        <module id="SLO101" name="Sloths 101"/>
+      </modules>
+      <availability>In Stock</availability>
+      <condition>Good</condition>
+      <image>Sloth.png</image>
+    </product>
+
+    <product id="BAlX3" language="En" edition="1st">
+      <title>Mindful Mr. Sloth</title>
+      <author>Katy Hudson</author>
+      <isbn>978-1684467952</isbn>
+      <sku>1684467950</sku>
+      <description>Mr. Sloth has one speed--slow. He loves to do things one at a time, at a nice, easy pace. Can Mr. Sloth's mindful ways teach Sasha to slow down and enjoy life?</description>
+      <price currency="USD">120</price>
+      <department>SLO</department>
+      <modules>
+        <module id="SLO102" name="Sloths 102"/>
+      </modules>
+      <availability>In Stock</availability>
+      <condition>Good</condition>
+      <image>Sloth.png</image>
+    </product>
+
+    <product id="BAlZ4" language="En" edition="1st">
+      <title>"Slowly, Slowly, Slowly," said the Sloth</title>
+      <author>Eric Carle</author>
+      <isbn>978-0142408476</isbn>
+      <sku>0142408476</sku>
+      <description>Slowly, slowly, slowly . . . that's the way the sloth moves. Slowly, it eats and then, slowly, it falls asleep. "What strange kind of creature is this?" the other animals wonder.</description>
+      <price currency="ZAR">257</price>
+      <department>SLO</department>
+      <modules>
+        <module id="SLO103" name="Sloths 103"/>
+      </modules>
+      <availability>In Stock</availability>
+      <condition>Good</condition>
+      <image>Sloth.png</image>
+    </product>
+
+    <product id="BAlA5" language="En" edition="3rd">
+      <title>Where's the Sloth?: A Super Sloth Search Book</title>
+      <author>Andy Rowland</author>
+      <isbn>978-1454934035</isbn>
+      <sku>1454934034</sku>
+      <description>Ever since Suzi sloth began to wonder about the world beyond her rainforest home, she’s longed for adventure. So she gathered her friends and they’re all going on a globetrotting tour of amazing cities.</description>
+      <price currency="ZAR">163</price>
+      <department>SLO</department>
+      <modules>
+        <module id="SLO103" name="Sloths 103"/>
+      </modules>
+      <availability>In Stock</availability>
+      <condition>Good</condition>
+      <image>Sloth.png</image>
+    </product>
+
+    <product id="BAlS6" language="En" edition="2nd">
+      <title>Bedtime for Baby Sloth</title>
+      <author>Danielle McLean </author>
+      <isbn>978-1680106008</isbn>
+      <sku>1680106007</sku>
+      <description>High up in the treetops, Mommy Sloth calls to her baby, “Come down, little one. It’s time for bed.” But Baby Sloth isn’t ready for bed. First she needs to say good night to the moon. And then she needs to sing a song to the birds. And what about a bedtime snack? Will Baby Sloth EVER be ready for bed?</description>
+      <price currency="ZAR">171</price>
+      <department>SLO</department>
+      <modules>
+        <module id="SLO103" name="Sloths 103"/>
+      </modules>
+      <availability>In Stock</availability>
+      <condition>Good</condition>
+      <image>Sloth.png</image>
+    </product>
+
+    <product id="BAlA7" language="En" edition="3rd">
+      <title>What is a Sloth?</title>
+      <author>Ginger Swift</author>
+      <isbn>978-1680526332</isbn>
+      <sku>1680526332</sku>
+      <description>Surprise and delight with bright artwork and fun sloth facts found under every flap</description>
+      <price currency="USD">6</price>
+      <department>SLO</department>
+      <modules>
+        <module id="SLO101" name="Sloths 101"/>
+      </modules>
+      <availability>In Stock</availability>
+      <condition>Good</condition>
+      <image>Sloth.png</image>
+    </product>
+
+    <product id="BAlA8" language="En" edition="1st">
+      <title>I Love You Slow Much</title>
+      <author>Rose Rossner</author>
+      <isbn>978-1728260075</isbn>
+      <sku>1728260078</sku>
+      <description>There's nothing better than hanging together with someone you love slow much! Combining gorgeous illustrations, charming animal puns, and an evergreen message of love and encouragement, this wildly sweet book is a pun-derful way show your llamazing little one you'll always be there.</description>
+      <price currency="USD">9</price>
+      <department>SLO</department>
+      <modules>
+        <module id="SLO101" name="Sloths 101"/>
+      </modules>
+      <availability>In Stock</availability>
+      <condition>Good</condition>
+      <image>Sloth.png</image>
+    </product>
+
+    <product id="BAlA9" language="En" edition="3rd">
+      <title>The Little Book of Sloth Philosophy</title>
+      <author>Jennifer McCartney</author>
+      <isbn>978-0008313692</isbn>
+      <sku>0008313695</sku>
+      <description>Relax, unwind and soak up the wisdom of the sloth with the slowest page turner you’ll ever read.</description>
+      <price currency="USD">8</price>
+      <department>SLO</department>
+      <modules>
+        <module id="SLO101" name="Sloths 101"/>
+      </modules>
+      <availability>In Stock</availability>
+      <condition>Good</condition>
+      <image>Sloth.png</image>
+    </product>
+
+    <product id="BAlA10" language="En" edition="3rd">
+      <title>Sloth and Squirrel in a Pickle</title>
+      <author>Cathy Ballou Mealey</author>
+      <isbn>978-1525302381</isbn>
+      <sku>1525302388</sku>
+      <description>A speedy squirrel and a sleepy sloth try to get the job done in this funny, heartwarming tale of two lovable, but unlikely, friends.</description>
+      <price currency="USD">13</price>
+      <department>SLO</department>
+      <modules>
+        <module id="SLO101" name="Sloths 101"/>
+      </modules>
+      <availability>In Stock</availability>
+      <condition>Good</condition>
+      <image>Sloth.png</image>
+    </product>
+  </products>
+</store>

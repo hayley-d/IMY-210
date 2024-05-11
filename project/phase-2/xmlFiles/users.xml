@@ -7,14 +7,56 @@
     <role>store_owner</role>
   </user>
   <user>
-    <id>2</id>
-    <username>jane_smith</username>
+    <id>22</id>
+    <username>Hippio</username>
     <password>password456</password>
     <role>store_owner</role>
   </user>
   <user>
     <id>53</id>
     <username>Mooncake</username>
+    <password>123</password>
+    <role>customer</role>
+  </user>
+  <user>
+    <id>67</id>
+    <username>Hayley</username>
+    <password>123</password>
+    <role>customer</role>
+  </user>
+  <user>
+    <id>748161</id>
+    <username>Sloth</username>
+    <password>123</password>
+    <role>customer</role>
+  </user>
+  <user>
+    <id>548261</id>
+    <username>Bun</username>
+    <password>123</password>
+    <role>customer</role>
+  </user>
+  <user>
+    <id>959149</id>
+    <username>hayley</username>
+    <password>1234</password>
+    <role>store_owner</role>
+  </user>
+  <user>
+    <id>271940</id>
+    <username>SlothySavant</username>
+    <password>123</password>
+    <role>store_owner</role>
+  </user>
+  <user>
+    <id>864560</id>
+    <username>CiscoPress</username>
+    <password>123</password>
+    <role>store_owner</role>
+  </user>
+  <user>
+    <id>335291</id>
+    <username>slothysavant</username>
     <password>123</password>
     <role>customer</role>
   </user>

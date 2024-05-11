@@ -2,50 +2,174 @@
 <store xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="validate.xsd">
     <information id="4">
         <name>
-            Wize Books
+            Keyboard Chronicles Bookstore
         </name>
         <description>
-            desc
+            Journey into the realm of technology and innovation at Keyboard Chronicles Bookstore. Explore a diverse range of books on computer science, programming, and digital culture. From coding tutorials to deep dives into tech history, unlock the secrets of the digital world with our curated selection of reads.
         </description>
         <owner userId="22">
-            Tom Nook
+            Hippio
         </owner>
     </information>
     <products>
-        <product id="tom-nook-textbook-1" language="en" edition="12">
-            <title>
-                Introduction to economy
-            </title>
-            <author>
-                Tom Nook
-            </author>
-            <isbn>
-                978-0-13-518276-3
-            </isbn>
-            <sku>
-                ECON-INTRO-2
-            </sku>
-            <description>
-                Introduction to economics introduces you to economics
-            </description>
-            <price currency="ZAR">
-                250.00
-            </price>
-            <department>
-                Economics
-            </department>
+        <product id="COS1" language="En" edition="3rd">
+            <title>Computers For Seniors For Dummies</title>
+            <author>Faithe Wempen</author>
+            <isbn>10: 0-13-822139-1</isbn>
+            <sku>13: 978-0-13-822139-3</sku>
+            <description>A simple guide to computers that'll show you what all the fuss is about</description>
+            <price currency="USD">15</price>
+            <department>COS</department>
             <modules>
-                <module id="ecn210" name="ECN 210"/>
+                <module id="COS" name="COS 101"/>
             </modules>
-            <availability>
-                in stock
-            </availability>
-            <condition>
-                great
-            </condition>
-            <image>
-                ./images/xml-books1.png
-            </image>
+            <availability>In Stock</availability>
+            <condition>Brand New</condition>
+            <image>sample.jpg</image>
+        </product>
+
+        <product id="COS2" language="En" edition="7th">
+            <title>Java All-in-One For Dummies</title>
+            <author>Doug Lowe</author>
+            <isbn>978-1525302381</isbn>
+            <sku>1525302388</sku>
+            <description>A beginning coder’s resource for learning the most popular coding language</description>
+            <price currency="USD">27</price>
+            <department>COS</department>
+            <modules>
+                <module id="COS" name="COS 101"/>
+            </modules>
+            <availability>In Stock</availability>
+            <condition>Good</condition>
+            <image>Sloth.png</image>
+        </product>
+
+        <product id="COS3" language="En" edition="3rd">
+            <title>Foundations of Computer Vision</title>
+            <author>Antonio Torralba</author>
+            <isbn>978-1525302381</isbn>
+            <sku>1525302388</sku>
+            <description>An accessible, authoritative, and up-to-date computer vision textbook offering a comprehensive introduction to the foundations of the field that incorporates the latest deep learning advances.</description>
+            <price currency="USD">83</price>
+            <department>COS</department>
+            <modules>
+                <module id="COS" name="COS 101"/>
+            </modules>
+            <availability>In Stock</availability>
+            <condition>Good</condition>
+            <image>cos.png</image>
+        </product>
+
+        <product id="COS4" language="En" edition="Premium">
+            <title>AP Computer Science Principles</title>
+            <author>Seth Reichelson</author>
+            <isbn>978-1525302381</isbn>
+            <sku>1525302388</sku>
+            <description>Be prepared for exam day with Barron’s. Trusted content from AP experts!</description>
+            <price currency="USD">19</price>
+            <department>COS</department>
+            <modules>
+                <module id="COS" name="COS 101"/>
+            </modules>
+            <availability>In Stock</availability>
+            <condition>Good</condition>
+            <image>cos.png</image>
+        </product>
+
+        <product id="COS5" language="En" edition="Multilingual">
+            <title>The Computer: A History from the 17th Century to Today</title>
+            <author>Julius Wiedemann</author>
+            <isbn>978-1525302381</isbn>
+            <sku>1525302388</sku>
+            <description>The story of the evolution of machines in computer history is full of the disruptive innovations that have led to today’s world.</description>
+            <price currency="USD">68</price>
+            <department>COS</department>
+            <modules>
+                <module id="COS" name="COS 101"/>
+            </modules>
+            <availability>In Stock</availability>
+            <condition>Good</condition>
+            <image>COS.png</image>
+        </product>
+
+        <product id="COS6" language="En" edition="3rd">
+            <title>Learning the bash Shell</title>
+            <author>Cameron Newham</author>
+            <isbn>978-1525302381</isbn>
+            <sku>1525302388</sku>
+            <description>O'Reilly's bestselling book on Linux's bash shell is at it again. Now that Linux is an established player both as a server and on the desktop Learning the bash Shell has been updated and refreshed to account for all the latest changes. </description>
+            <price currency="USD">24</price>
+            <department>COS</department>
+            <modules>
+                <module id="COS" name="COS 101"/>
+            </modules>
+            <availability>In Stock</availability>
+            <condition>Good</condition>
+            <image>COS.png</image>
+        </product>
+
+        <product id="COS7" language="En" edition="3rd">
+            <title>Java: The Comprehensive Guide to Java Programming for Professionals</title>
+            <author>Christian Ullenboom </author>
+            <isbn>978-1525302381</isbn>
+            <sku>1525302388</sku>
+            <description>This is the up-to-date, practical guide to Java you’ve been looking for! Whether you’re a beginner, you’re switching to Java from another language, or you’re just looking to brush up on your Java skills, this is the only book you need.</description>
+            <price currency="USD">44</price>
+            <department>COS</department>
+            <modules>
+                <module id="COS" name="COS 101"/>
+            </modules>
+            <availability>In Stock</availability>
+            <condition>Good</condition>
+            <image>COS.png</image>
+        </product>
+
+        <product id="COS8" language="En" edition="3rd">
+            <title>Black Hat Bash: Bash Scripting for Hackers and Pentesters</title>
+            <author>Nick Aleks</author>
+            <isbn>978-1525302381</isbn>
+            <sku>1525302388</sku>
+            <description>Master the art of offensive bash scripting. This highly practical hands-on guide covers chaining commands together, automating tasks, crafting living-off-the-land attacks, and more!</description>
+            <price currency="USD">56</price>
+            <department>COS</department>
+            <modules>
+                <module id="COS" name="COS 101"/>
+            </modules>
+            <availability>In Stock</availability>
+            <condition>Good</condition>
+            <image>COS.png</image>
+        </product>
+
+        <product id="COS9" language="En" edition="3rd">
+            <title>Scripting: Automation with Bash, PowerShell, and Python</title>
+            <author>Michael Kofler</author>
+            <isbn>978-1525302381</isbn>
+            <sku>1525302388</sku>
+            <description>Developers and admins, it’s time to simplify your workday. With this practical guide, use scripting to solve tedious IT problems with less effort and less code! </description>
+            <price currency="USD">44</price>
+            <department>COS</department>
+            <modules>
+                <module id="COS" name="COS 101"/>
+            </modules>
+            <availability>In Stock</availability>
+            <condition>Good</condition>
+            <image>COS.png</image>
+        </product>
+
+        <product id="COS10" language="En" edition="1st">
+            <title>bash Idioms: Write Powerful, Flexible, Readable Shell Scripts</title>
+            <author>Carl Albing</author>
+            <isbn>978-1525302381</isbn>
+            <sku>1525302388</sku>
+            <description>Shell scripts are everywhere, especially those written in bash-compatible syntax. But these scripts can be complex and obscure.</description>
+            <price currency="USD">32</price>
+            <department>COS</department>
+            <modules>
+                <module id="COS" name="COS 101"/>
+            </modules>
+            <availability>In Stock</availability>
+            <condition>Good</condition>
+            <image>cos.png</image>
         </product>
     </products>
 </store>

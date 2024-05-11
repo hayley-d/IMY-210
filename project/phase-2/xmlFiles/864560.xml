@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<store xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="validate.xsd">
+    <information id="864560">
+        <name>
+            Cisco Library Emporium
+        </name>
+        <description>
+            Step into the world of networking and technology at Cisco Library Emporium. Discover a treasure trove of resources on networking, cybersecurity, and IT infrastructure. From beginner guides to advanced manuals, our curated selection of books offers something for everyone interested in mastering Cisco technologies.
+        </description>
+        <owner userId="864560">
+            CiscoPress
+        </owner>
+    </information>
+    <products>
+        <product id="CIS1" language="En" edition="3rd">
+            <title>CCNA 200-301 Official Cert Guide Library</title>
+            <author>Wendell Odom, David Hucaby, Jason Gooley</author>
+            <isbn>10: 0-13-822139-1</isbn>
+            <sku>13: 978-0-13-822139-3</sku>
+            <description>Cisco Press has the only study guides approved by Cisco for the new CCNA certification. The new edition of the best-selling two-book value-priced CCNA 200-301 Official Cert Guide Library, Second Edition presents you with an organized test-preparation routine using proven series elements and techniques. </description>
+            <price currency="USD">95.5</price>
+            <department>COS</department>
+            <modules>
+                <module id="SLO101" name="Sloths 101"/>
+            </modules>
+            <availability>In Stock</availability>
+            <condition>Brand New</condition>
+            <image>sample.jpg</image>
+        </product>
+
+        <product id="CIS2" language="En" edition="Unabridged">
+            <title>Kali Linux for Beginners</title>
+            <author>Jowanna Lewis</author>
+            <isbn>978-1525302381</isbn>
+            <sku>1525302388</sku>
+            <description>Most of the big companies today seek the help of Kali Linux for the purpose of tracing and checking the various forms of vulnerabilities which are present within a system and thus ensures 100 percent security for an organization. Unless and until you are unaware of the basics, you will not be able to use this software.</description>
+            <price currency="USD">16</price>
+            <department>KALI</department>
+            <modules>
+                <module id="KALI101" name="KALI 101"/>
+            </modules>
+            <availability>In Stock</availability>
+            <condition>New</condition>
+            <image>kali.png</image>
+        </product>
+
+        <product id="CIS3" language="En" edition="3rd">
+            <title>Cisco Certified DevNet Associate DEVASC 200-901</title>
+            <author>Chris Jackson</author>
+            <isbn>978-1525302381</isbn>
+            <sku>1525302388</sku>
+            <description>Cisco Certified DevNet Associate DEVASC 200-901 Official Cert Guide presents you with an organized test preparation routine using proven series elements and techniques.</description>
+            <price currency="USD">50</price>
+            <department>CISCO</department>
+            <modules>
+                <module id="CISCO200" name="CISCO 200"/>
+            </modules>
+            <availability>Out of Stock</availability>
+            <condition>Used</condition>
+            <image>cisco.png</image>
+        </product>
+
+        <product id="CIS4" language="En" edition="3rd">
+            <title>CCNP Enterprise Wireless Design ENWLSD 300-425</title>
+            <author>Jerome Henry</author>
+            <isbn>978-1525302381</isbn>
+            <sku>1525302388</sku>
+            <description>Trust the best-selling Official Cert Guide series from Cisco Press to help you learn, prepare, and practice for the CCNP Enterprise Wireless ENWLSD 300-425 and ENWLSI 300-430 exams.</description>
+            <price currency="USD">75</price>
+            <department>SICO</department>
+            <modules>
+                <module id="SICO 300" name="SICO 300"/>
+            </modules>
+            <availability>In Stock</availability>
+            <condition>Great</condition>
+            <image>ciso.png</image>
+        </product>
+
+        <product id="CIS5" language="En" edition="3rd">
+            <title>Cisco Certified Support Technician (CCST) Networking 100-150</title>
+            <author>Allan Johnson</author>
+            <isbn>978-1525302381</isbn>
+            <sku>1525302388</sku>
+            <description> most practical way to understand the Cisco Certified Support Technician (CCST) Networking certification process, to commit to taking your CCST Networking 200-301 exam, and to finish your preparation using a variety of primary and supplemental study resources.</description>
+            <price currency="USD">39</price>
+            <department>CISO</department>
+            <modules>
+                <module id="CISO304" name="CISO 304"/>
+            </modules>
+            <availability>Out of Stock</availability>
+            <condition>Great</condition>
+            <image>ciso.png</image>
+        </product>
+
+        <product id="CIS6" language="En" edition="3rd">
+            <title>CCNP and CCIE Security Core SCOR 350-701 Official Cert Guide</title>
+            <author>Omar Santos </author>
+            <isbn>978-1525302381</isbn>
+            <sku>1525302388</sku>
+            <description>Trust the best-selling Official Cert Guide series from Cisco Press to help you learn, prepare, and practice for the CCNP and CCIE Security Core SCOR 350-701 exam. </description>
+            <price currency="USD">69</price>
+            <department>DEV</department>
+            <modules>
+                <module id="DEV402" name="DEV402"/>
+            </modules>
+            <availability>In Stock</availability>
+            <condition>Good</condition>
+            <image>dev.png</image>
+        </product>
+
+        <product id="CIS7" language="En" edition="1st">
+            <title>Cisco Certified Support Technician (CCST) Cybersecurity 100-160 Official Cert Guide</title>
+            <author>Shane Sexton</author>
+            <isbn>978-1525302381</isbn>
+            <sku>1525302388</sku>
+            <description>Trust the best-selling Official Cert Guide series from Cisco Press to help you learn, prepare, and practice for the CCST Cybersecurity 100-160 exam. </description>
+            <price currency="USD">32</price>
+            <department>DEV</department>
+            <modules>
+                <module id="DEV501" name="DEV501"/>
+            </modules>
+            <availability>In Stock</availability>
+            <condition>Great</condition>
+            <image>cis.png</image>
+        </product>
+
+        <product id="CIS8" language="En" edition="2nd">
+            <title>CCNP Enterprise Core ENCOR 350-401 and Advanced Routing ENARSI 300-410 Official Cert Guide Library</title>
+            <author>Brad Edgeworth</author>
+            <isbn>978-1525302381</isbn>
+            <sku>1525302388</sku>
+            <description>isco Press has the only Study Guides approved by Cisco for the new CCNP Enterprise Certification.</description>
+            <price currency="USD">119</price>
+            <department>CIS</department>
+            <modules>
+                <module id="CIS901" name="CIS901"/>
+            </modules>
+            <availability>Out of Stock</availability>
+            <condition>Great</condition>
+            <image>sic.png</image>
+        </product>
+
+        <product id="CIS9" language="En" edition="2nd">
+            <title>CCNP Enterprise Advanced Routing ENARSI 300-410 Official Cert Guide</title>
+            <author>Brad Edgeworth</author>
+            <isbn>978-1525302381</isbn>
+            <sku>1525302388</sku>
+            <description>Trust the best-selling Official Cert Guide series from Cisco Press to help you learn, prepare, and practice for the 300-410 ENARSI exam.</description>
+            <price currency="USD">74</price>
+            <department>DEV</department>
+            <modules>
+                <module id="DEV102" name="DEV102"/>
+            </modules>
+            <availability>In Stock</availability>
+            <condition>Great</condition>
+            <image>cisc.png</image>
+        </product>
+
+        <product id="CIS10" language="En" edition="1st">
+            <title>Cisco Certified DevNet Professional DEVCOR 350-901 Official Cert Guide </title>
+            <author>Hazim Dahir</author>
+            <isbn>978-1525302381</isbn>
+            <sku>1525302388</sku>
+            <description>Cisco Certified DevNet Professional DEVCOR 350-901 Official Cert Guide presents you with an organized test preparation routine using proven series elements and techniques</description>
+            <price currency="USD">64</price>
+            <department>OPS</department>
+            <modules>
+                <module id="OPS204" name="OPS204"/>
+            </modules>
+            <availability>Out of Stock</availability>
+            <condition>Great</condition>
+            <image>ops.png</image>
+        </product>
+    </products>
+</store>

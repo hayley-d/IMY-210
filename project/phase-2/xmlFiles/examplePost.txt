@@ -73,3 +73,27 @@
     }
   }
 }
+
+
+
+This is for the add product endpoint:
+{
+      "id":"Halyey-1",
+      "language": "En",
+      "edition":"2nd",
+      "title":"CCNA 200-301 Official Cert Guide Library",
+      "author":"Wendell Odom, David Hucaby, Jason Gooley",
+      "isbn":"10: 0-13-822139-1",
+      "sku":"13: 978-0-13-822139-3",
+      "description":"Cisco Press has the only study guides approved by Cisco for the new CCNA certification. The new edition of the best-selling two-book value-priced CCNA 200-301 Official Cert Guide Library, Second Edition presents you with an organized test-preparation routine using proven series elements and techniques. ",
+      "price":"95.5",
+      "currency":"USD",
+      "department":"COS",
+       "modules": [
+        { "id": 1, "name": "Module 1" },
+        { "id": 2, "name":"Module 2" }
+    ],
+      "availability":"In Stock",
+      "condition":"Brand New",
+      "image":"sample.jpg"
+}

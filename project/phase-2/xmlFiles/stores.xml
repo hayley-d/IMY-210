@@ -7,7 +7,7 @@
             22
         </id>
         <name>
-            Wize Books
+            Keyboard Chronicles Bookstore
         </name>
     </store>
     <store>
@@ -15,8 +15,31 @@
             43
         </id>
         <name>
-            John's textbooks
+            Nintendo Novel Nook
         </name>
     </store>
-
+    <store>
+        <id>
+            959149
+        </id>
+        <name>
+            DevOps Book Haven
+        </name>
+    </store>
+    <store>
+        <id>
+            271940
+        </id>
+        <name>
+            Slothful Pages
+        </name>
+    </store>
+    <store>
+        <id>
+            864560
+        </id>
+        <name>
+            Cisco Library Emporium
+        </name>
+    </store>
 </stores>

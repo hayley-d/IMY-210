@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<store xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="validate.xsd">
+  <information id="959149">
+    <name>&#xD;
+        DevOps Book Haven&#xD;
+        </name>
+    <description>&#xD;
+        Welcome to DevOps Book Haven, your go-to destination for all things related to development and operations. Explore our vast collection of books covering software development, automation, cloud computing, and more. Whether you're a seasoned engineer or a curious beginner, find the resources you need to thrive in the world of DevOps.&#xD;
+        </description>
+    <owner userId="959149">&#xD;
+            hayley&#xD;
+        </owner>
+  </information>
+  <products >
+      <product id="DEV1" language="En" edition="1st">
+          <title>The DevOps Handbook</title>
+          <author>Gene Kim</author>
+          <isbn>978-1525302381</isbn>
+          <sku>1525302388</sku>
+          <description> The DevOps Handbook has been the definitive guide for taking the successes laid out in the best-selling The Phoenix Project and applying them in any organization. Now, with this fully updated and expanded edition, it’s time to take DevOps out of the IT department and apply it across the full business.</description>
+          <price currency="USD">15</price>
+          <department>DEV</department>
+          <modules>
+              <module id="DEV103" name="DevOps 103"/>
+          </modules>
+          <availability>In Stock</availability>
+          <condition>Good</condition>
+          <image>Dev.png</image>
+      </product>
+
+      <product id="DEV2" language="En" edition="2nd">
+          <title>Learning DevOps</title>
+          <author>Mikael Krief</author>
+          <isbn>978-1525302381</isbn>
+          <sku>1525302388</sku>
+          <description>Implement modern DevOps techniques to increase business productivity, agility, reliability, security, and scalability</description>
+          <price currency="USD">49</price>
+          <department>Dev</department>
+          <modules>
+              <module id="Dev202" name="DevOps 202"/>
+          </modules>
+          <availability>In Stock</availability>
+          <condition>Used</condition>
+          <image>Devops.png</image>
+      </product>
+
+      <product id="DEV3" language="En" edition="3rd">
+          <title>DevOps for the Desperate</title>
+          <author>Bradley Smith</author>
+          <isbn>978-1525302381</isbn>
+          <sku>1525302388</sku>
+          <description>DevOps for the Desperate is a hands-on, no-nonsense guide for those who land in a DevOps environment and need to get up and running quickly.</description>
+          <price currency="USD">22</price>
+          <department>Dev</department>
+          <modules>
+              <module id="DEV304" name="DEV304"/>
+          </modules>
+          <availability>In Stock</availability>
+          <condition>Good</condition>
+          <image>devoops.png</image>
+      </product>
+
+      <product id="DEV4" language="En" edition="2nd">
+          <title>Cloud Native DevOps with Kubernetes</title>
+          <author>Justin Domingus</author>
+          <isbn>978-1525302381</isbn>
+          <sku>1525302388</sku>
+          <description>Kubernetes has become the operating system of today's cloud native world, providing a reliable and scalable platform for running containerized workloads. In this friendly, pragmatic book, cloud experts Justin Domingus and John Arundel show you what Kubernetes can do-and what you can do with it.</description>
+          <price currency="USD">48</price>
+          <department>DEV</department>
+          <modules>
+              <module id="DEV607" name="DEV607"/>
+          </modules>
+          <availability>In Stock</availability>
+          <condition>Great</condition>
+          <image>Sloth.png</image>
+      </product>
+
+      <product id="DEV5" language="En" edition="1st">
+          <title>The Phoenix Project</title>
+          <author>Gene Kim</author>
+          <isbn>978-1525302381</isbn>
+          <sku>1525302388</sku>
+          <description>The Phoenix Project continues to guide IT in the DevOps revolution. </description>
+          <price currency="USD">15</price>
+          <department>DEV</department>
+          <modules>
+              <module id="DEV301" name="DEV301"/>
+          </modules>
+          <availability>In Stock</availability>
+          <condition>Good</condition>
+          <image>devvv.png</image>
+      </product>
+
+      <product id="DEV6" language="En" edition="illustrated">
+          <title>DevOps For Dummies</title>
+          <author>Emily Freeman</author>
+          <isbn>978-1525302381</isbn>
+          <sku>1525302388</sku>
+          <description>DevOps embraces a culture of unifying the creation and distribution of technology in a way that allows for faster release cycles and more resource-efficient product updating. DevOps For Dummies provides a guidebook for those on the development or operations side in need of a primer on this way of working.</description>
+          <price currency="USD">19</price>
+          <department>OPS</department>
+          <modules>
+              <module id="OPS303" name="OPS 303"/>
+          </modules>
+          <availability>In Stock</availability>
+          <condition>Great</condition>
+          <image>ops.png</image>
+      </product>
+
+      <product id="DEV7" language="En" edition="1st">
+          <title>Automating DevOps with GitLab CI/CD Pipelines</title>
+          <author>Christopher Cowell</author>
+          <isbn>978-1525302381</isbn>
+          <sku>1525302388</sku>
+          <description>Use GitLab CI/CD pipelines for automating and deploying different steps of your software development lifecycle using best practices and troubleshooting methods.</description>
+          <price currency="USD">33</price>
+          <department>OPSS</department>
+          <modules>
+              <module id="OPS405" name="OPS405"/>
+          </modules>
+          <availability>In Stock</availability>
+          <condition>New</condition>
+          <image>ooops.png</image>
+      </product>
+
+      <product id="DEV8" language="En" edition="1st">
+          <title>Effective DevOps: Building a Culture of Collaboration, Affinity, and Tooling at Scale </title>
+          <author>Jennifer Davis</author>
+          <isbn>978-1525302381</isbn>
+          <sku>1525302388</sku>
+          <description>Devops stresses iterative efforts to break down information silos, monitor relationships, and repair misunderstandings that arise between and within teams in your organization.</description>
+          <price currency="USD">26</price>
+          <department>OPS</department>
+          <modules>
+              <module id="OPS103" name="OPS103"/>
+          </modules>
+          <availability>In Stock</availability>
+          <condition>New</condition>
+          <image>dev.png</image>
+      </product>
+
+      <product id="DEV9" language="En" edition="Unabridged">
+          <title>Team Topologies</title>
+          <author>Matthew Skelton</author>
+          <isbn>978-1525302381</isbn>
+          <sku>1525302388</sku>
+          <description>Effective software teams are essential for any organization to deliver value continuously and sustainably. But how do you build the best team organization for your specific goals, culture, and needs?</description>
+          <price currency="USD">15</price>
+          <department>OPS</department>
+          <modules>
+              <module id="OPS204" name="OPS204"/>
+          </modules>
+          <availability>In Stock</availability>
+          <condition>Great</condition>
+          <image>dev.png</image>
+      </product>
+
+      <product id="DEV10" language="En" edition="Unabridged">
+          <title>Thinking in Systems: A Primer</title>
+          <author>Donella H. Meadows</author>
+          <isbn>978-1525302381</isbn>
+          <sku>1525302388</sku>
+          <description>Thinking in Systems is a concise and crucial book offering insight for problem-solving on scales ranging from the personal to the global.</description>
+          <price currency="USD">15</price>
+          <department>DEV</department>
+          <modules>
+              <module id="DEV101" name="DEV101"/>
+          </modules>
+          <availability>In Stock</availability>
+          <condition>Good</condition>
+          <image>devvvv.png</image>
+      </product>
+  </products>
+</store>
